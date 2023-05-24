@@ -1,6 +1,14 @@
 from flask import Flask, jsonify, request
+from flask_pymongo import PyMongo
 
 app = Flask(__name__)
+app.config["SECRET_KEY"] = "cd70170c0b6aa423ba1a26e416c337f5938b9964"
+app.config["MONGO_URI"] = "mongodb+srv://NatanCR:CZ0SdZm85oa9U7aQ@cluster01.y4yohbc.mongodb.net/?retryWrites=true&w=majority"
+
+
+mongoDB_cliente = PyMongo(app)
+db = mongoDB_cliente.db
+
 
 planets = [
     {
@@ -122,4 +130,5 @@ def deletePlanet(id):
 
 #port=5000,host='localhost'
 #verificar a porta para fazer o deploye com o servidor 
+#CZ0SdZm85oa9U7aQ mongoDB key
 app.run(debug=True)
