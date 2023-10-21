@@ -2,8 +2,8 @@ from flask import Flask, jsonify, request
 from flask_pymongo import PyMongo
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "cd70170c0b6aa423ba1a26e416c337f5938b9964"
-app.config["MONGO_URI"] = "mongodb+srv://NatanCR:CZ0SdZm85oa9U7aQ@cluster01.y4yohbc.mongodb.net/?retryWrites=true&w=majority"
+app.config["SECRET_KEY"] = ""
+app.config["MONGO_URI"] = ""
 
 
 mongoDB_cliente = PyMongo(app)
